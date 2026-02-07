@@ -1,0 +1,14 @@
+project_name: databricks-lakehouse-etl
+environment: dev
+
+aws:
+  s3_bucket: retail-datalake-de
+
+paths:
+  raw: raw/
+  bronze: bronze/
+  silver: silver/
+  gold: gold/
+
+dataset:
+  name: sales
