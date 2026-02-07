@@ -70,7 +70,10 @@ databricks-lakehouse-etl-pipeline/
 │   └── architecture.txt
 │
 ├── screenshots/
-│   └── AWS S3 raw data
+│    ├── bronze_notebook.png
+│    ├── silver_notebook.png
+│    ├── gold_notebook.png
+│    └── etl_pipeline.png
 │
 ├── utils/
 │   └── common_paths.py
