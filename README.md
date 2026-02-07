@@ -57,10 +57,23 @@ AWS S3 (Raw CSV)
 ## 📂 Repository Structure
 
 ```txt
-notebooks/
-  1_bronze_ingestion.py      # Raw data ingestion
-  2_silver_transformation.py # Cleaning & transformations
-  3_gold_aggregation.py      # Aggregations & analytics
-
-utils/
-  common_paths.py            # Centralized S3 path configs
+databricks-lakehouse-etl-pipeline/
+│
+├── README.md
+│
+├── notebooks/
+│   ├── 1_bronze_ingestion.py
+│   ├── 2_silver_transformation.py
+│   └── 3_gold_aggregation.py
+│
+├── architecture/
+│   └── architecture.txt
+│
+├── screenshots/
+│   └── AWS S3 raw data
+│
+├── utils/
+│   └── common_paths.py
+│
+├── .gitignore
+└── requirements.txt
