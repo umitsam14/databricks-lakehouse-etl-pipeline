@@ -1,0 +1,73 @@
+Databricks Lakehouse ETL Architecture
+====================================
+
+               ┌──────────────────────────┐
+               │        AWS S3            │
+               │   (Raw CSV Data Source)  │
+               └────────────┬─────────────┘
+                            │
+                            │  Structured Streaming
+                            ▼
+               ┌──────────────────────────┐
+               │        BRONZE LAYER      │
+               │    Raw Delta Tables      │
+               │  - Raw ingestion         │
+               │  - Schema inference      │
+               │  - Streaming writes      │
+               │  - Checkpointing         │
+               └────────────┬─────────────┘
+                            │
+                            │  Transformations
+                            ▼
+               ┌──────────────────────────┐
+               │        SILVER LAYER      │
+               │   Clean Delta Tables     │
+               │  - Data cleaning         │
+               │  - Type casting          │
+               │  - Deduplication         │
+               │  - Business logic        │
+               │  - Curated datasets      │
+               └────────────┬─────────────┘
+                            │
+                            │  Aggregations
+                            ▼
+               ┌──────────────────────────┐
+               │         GOLD LAYER       │
+               │   Analytics Delta Tables │
+               │  - Aggregated metrics    │
+               │  - Business KPIs         │
+               │  - Reporting datasets    │
+               │  - BI-ready tables       │
+               └────────────┬─────────────┘
+                            │
+                            ▼
+          ┌────────────────────────────────────────┐
+          │        Analytics / BI / SQL / ML       │
+          │  Dashboards | Reporting | Data Science │
+          │  Machine Learning|Feature Engineering  │
+          └────────────────────────────────────────┘
+
+
+Architecture Pattern:
+---------------------
+Lakehouse Architecture
+Medallion Architecture (Bronze → Silver → Gold)
+
+Core Technologies:
+------------------
+- Databricks
+- PySpark
+- Delta Lake
+- AWS S3
+- Spark Structured Streaming
+
+Design Principles:
+------------------
+- Scalability
+- Fault tolerance
+- Layered architecture
+- Separation of concerns
+- Cloud-native design
+- Production readiness
+- Enterprise data modeling
+- Analytics-first design
